@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/abflett/gridlock/issues"
   },
-  "homepage": "https://github.com/abflett/gridlock#readme"
+  "homepage": "https://github.com/abflett/gridlock#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
