@@ -1,7 +1,5 @@
 .logger {
     position: absolute;
-    width: 20vw;
-    height: 35vh;
     z-index: 9;
 }
 

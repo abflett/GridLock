@@ -7,7 +7,8 @@ io.on('connection', function(socket){
     console.log(socket.id + " Connected");
 
     socket.on('handshake', function(msg){
-      io.emit('handshaken', socket.id + " Connected");
+      console.log(msg);
+      io.emit('handshaken',"Connected as " + socket.id);
     });
 
     socket.on('disconnect', function(){

@@ -7,3 +7,47 @@
     justify-content: center;
     flex-direction: column;
 }
+
+.exit {
+    position: absolute;
+    right: 1vmin;
+    top: 1vmin;
+}
+
+.board {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80vmin;
+    height: 80vmin;
+    background-color: rgb(255, 255, 255);
+    z-index: 1;
+}
+
+.gamepiece {
+    width: 9.9vmin;
+    height: 9.9vmin;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.3);
+    border-width: 0.05vmin;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 2;
+
+}
+.gamepiece:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    animation-name: fadein;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+    0% {
+        background-color: rgba(0, 0, 0, 0.192);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.092);
+    }
+}

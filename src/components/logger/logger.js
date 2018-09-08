@@ -4,7 +4,7 @@ import './logger.css';
 class Logger extends Component {
   constructor(props){
     super(props);
-    this.state = {toggle: "visible"};
+    this.state = {toggle: "hidden"};
   }
 
   toggle(){
@@ -18,7 +18,7 @@ class Logger extends Component {
   render() {
     return (
       <div className="logger">
-        <button className="show-hide" onClick={this.toggle.bind(this)}>Hide/Show</button>
+        <button className="show-hide" onClick={this.toggle.bind(this)}>Logs</button>
         <p className="logs" style={{visibility: this.state.toggle}}>{this.props.log}</p>
       </div>
     );

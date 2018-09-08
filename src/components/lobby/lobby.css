@@ -8,3 +8,9 @@
     align-items: center;
     justify-content: center;
 }
+
+.exit {
+    position: absolute;
+    right: 1vmin;
+    top: 1vmin;
+}

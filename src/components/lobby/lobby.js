@@ -6,11 +6,15 @@ class Lobby extends Component {
     this.props.setGameState(0);
   }
 
+  playgame(){
+    this.props.setGameState(2);
+  }
+
   render() {
     return (
       <div className="lobby">
-        <button onClick={this.exitLobby.bind(this)}>Exit</button>
-        <button>Practice</button>
+        <button className="exit" onClick={this.exitLobby.bind(this)}>Exit</button>
+        <button onClick={this.playgame.bind(this)}>Practice</button>
         <button>Quick Match</button>
         <div className="games">
             <button>Join</button>

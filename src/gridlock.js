@@ -16,8 +16,8 @@ class GridLock extends Component {
     this.state = {
       gameStates: [
         (<Start setGameState={this.setGameState.bind(this)} />),
-        (<Lobby log={this.log.bind(this)} setGameState={this.setGameState.bind(this)} />),
-        (<Game />)
+        (<Lobby setGameState={this.setGameState.bind(this)} />),
+        (<Game setGameState={this.setGameState.bind(this)} />)
       ],
       log: "Logs: "};
   }
@@ -31,7 +31,7 @@ class GridLock extends Component {
   }
 
   componentDidMount() {
-    socket.emit("handshake", "Testing connection...");
+    socket.emit("handshake", "Bounce Test");
     socket.on("handshaken", msg => {
       console.log(msg);
     });
