@@ -1,0 +1,48 @@
+.splash {
+    position: absolute;
+    background-color: #0a0a0a;
+    color: #e4e4e4;
+    opacity: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation-name: fadeout;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 10vmin;
+    font-weight: 200;
+}
+
+.presents {
+    padding-top: 4vmin;
+    font-size: 4vmin;
+    font-weight: 100;
+}
+
+.copyright {
+    font-size: 2.5vmin;
+    font-weight: 100;
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 0;
+    }
+    100% {
+        visibility: hidden;
+    }
+}
