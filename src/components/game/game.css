@@ -26,6 +26,10 @@
 }
 
 .gamepiece {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width: 9.9vmin;
     height: 9.9vmin;
     border-style: solid;
@@ -37,17 +41,24 @@
 }
 .gamepiece:hover {
     background-color: rgba(0, 0, 0, 0.2);
-    animation-name: fadein;
+    animation-name: fadeOut;
     animation-duration: 2s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
 
-@keyframes fadein {
+@keyframes fadeOut {
     0% {
         background-color: rgba(0, 0, 0, 0.192);
     }
     100% {
         background-color: rgba(0, 0, 0, 0.092);
     }
+}
+
+.token {
+    width: 75%;
+    height: 75%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
 }

@@ -5,27 +5,36 @@ import Gamepiece from './gamepiece'
 import './game.css';
 
 class Game extends Component {
-
-    squares = []
+    constructor(props){
+        super(props);
+        this.state = {
+            numPieces: this.props.options,
+            pieces: []
+        };
+    }
 
     exitGame(){
         this.props.setGameState(1);
     }
 
-    componentDidMount() {
-        for(var i = 0; i < 64; i++){
-            this.squares.push({id: i});
+    makeBoard(){
+        let pieces = this.state.pieces;
+        for(let i = 0; i < this.state.numPieces; i++){
+            pieces.push(<Gamepiece id={i} key={i}/>);
         }
-        console.log(this.squares.length);
-        console.log(this.squares[5].id)
-      }
+        this.setState({pieces: pieces});
+    }
+
+    componentDidMount(){
+        this.makeBoard();
+    }
 
   render() {
     return (
       <div className="game">
         <button className="exit" onClick={this.exitGame.bind(this)}>Exit</button>
         <div className="board">
-            <Gamepiece />
+            {this.state.pieces}
         </div>
       </div>
     );

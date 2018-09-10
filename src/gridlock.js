@@ -14,20 +14,27 @@ class GridLock extends Component {
   constructor(props){
     super(props);
     this.state = {
-      gameStates: [
-        (<Start setGameState={this.setGameState.bind(this)} />),
-        (<Lobby setGameState={this.setGameState.bind(this)} />),
-        (<Game setGameState={this.setGameState.bind(this)} />)
-      ],
-      log: "Logs: "};
+      log: "Logs: ",
+      gameOptions: {gameSize: 64}
+    };
   }
+
+  gameStates = [
+    (<Start setGameState={this.setGameState.bind(this)} />),
+    (<Lobby setGameState={this.setGameState.bind(this)} />),
+    (<Game options={64} setGameState={this.setGameState.bind(this)} />)
+  ];
 
   log(message){
     this.setState({log: message});
   }
 
+  thegameoption(){
+    return 64;
+  }
+
   setGameState(state){
-    this.setState({gameState: this.state.gameStates[state]});
+    this.setState({gameState: this.gameStates[state]});
   }
 
   componentDidMount() {
@@ -35,7 +42,7 @@ class GridLock extends Component {
     socket.on("handshaken", msg => {
       console.log(msg);
     });
-    this.setGameState(0);
+    this.setGameState(2);
   }
 
   render() {
